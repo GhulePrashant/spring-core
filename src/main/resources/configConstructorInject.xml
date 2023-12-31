@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <bean name="refCertificate" class="com.springcore.constructorinjection.Certificate">
+        <constructor-arg name="name" value="OCJP" />
+    </bean>
+
+    <bean class="com.springcore.constructorinjection.Person" name="person1">
+        <constructor-arg name="id" value="101" type="int"/>
+        <constructor-arg name="name" value="Prashant" />
+        <constructor-arg name="certificate" ref="refCertificate" />
+    </bean>
+
+    <bean class="com.springcore.constructorinjection.Addition" name="addition1">
+        <constructor-arg value="12" />
+        <constructor-arg value="28" />
+    </bean>
+
+</beans>
